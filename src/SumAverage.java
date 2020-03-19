@@ -42,9 +42,11 @@ public class SumAverage {
   public static double average(int lowerBound, int upperBound) {
     double sum = 0;
     double count = 0;
-    for(int i = lowerBound; i <= upperBound; i++) {
+    int i = lowerBound;
+    while (i <= upperBound) {
       sum += i;
       count++;
+      i++;
     }
     double average = sum / count ;
     return average;
@@ -58,9 +60,12 @@ public class SumAverage {
    */
   public static double average(int[] numbers) {
     double sum = 0;
-    for(int i : numbers) {
-      sum += i;
-    }
+    int i = 0;
+    do {
+      sum += numbers[i];
+      i++;
+    } while (i < numbers.length);
+
     double average = sum / numbers.length;
     return average;
   }
